@@ -24,10 +24,15 @@ import debug_toolbar
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     #当路由过来，匹配上的时候，会执行视图的指定函数名 -》Django会给视图传递一个参数
-    url(r'demo/$',views.demo),
-    url(r'demo_form/$',views.demo_form),
-    url(r'demo_form2/$',views.demo_form2),
-    url(r'demo_form2_db/$',views.demo_form2_db),
+    url(r'^demo/$',views.demo ,name='demo'),
+    url(r'^demo_form/$',views.demo_form),
+    url(r'^demo_form2/$',views.demo_form2),
+    url(r'^demo_form2_db/$',views.demo_form2_db),
+    url(r'^route_base/',include('apps.route_base.urls',namespace='route_base')),
+    url(r'^route_resolve/',include('apps.route_resolve.urls',namespace='route_resolve')),
+    url(r'^django_templates/',include('apps.django_templates.urls',namespace='django_templates')),
+    url(r'^forms_base/',include('apps.forms_base.urls',namespace='forms_base')),
+    url(r'^forms_auth/',include('apps.forms_auth.urls',namespace='forms_auth')),
 ]
 
 

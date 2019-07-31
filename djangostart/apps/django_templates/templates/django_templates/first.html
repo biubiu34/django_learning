@@ -1,0 +1,11 @@
+<div class="row placeholders">
+    {% for item in good_students %}
+        <div class="col-xs-6 col-sm-3 placeholder">
+            <img src="data:img/gif:base64" class="img-responsive" alt="Generic placeholder thumbnail" width="200" height="200">
+        <h4>{{ forloop.counter }}.{{ item.name }}</h4>
+        <span class="text-muted">{{ item.hobby }}</span>
+        </div>
+    {% empty %}
+            大家表现都不会，没有上榜
+     {% endfor %}
+</div>         

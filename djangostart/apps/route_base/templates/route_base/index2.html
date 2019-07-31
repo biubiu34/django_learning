@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<a href="/demo/">跳转到demo</a>
+<a href="{% url 'demo' %}">跳转到demo</a>
+<a href="{% url 'route_base:zoos1' 10%}">跳转到route_base zoos1</a>
+<a href="{% url 'route_base:zoos3' 5 %}">跳转到route_base zoos3</a>
+</body>
+</html>
