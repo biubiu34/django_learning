@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>欢迎你！</h1>
+{% if messages %}
+    {% for item in messages %}
+        {{ item }}-----
+    {% endfor %}
+{% endif %}
+<ul>
+    <li><a href="{% url 'forms_base:register' %}">注册</a></li>
+    <li><a href="{% url 'forms_base:login' %}">登录</a></li>
+    <li><a href="{% url 'forms_base:logout' %}">注销</a></li>
+    <li><a href="{% url 'forms_base:index' %}">首页</a></li>
+</ul>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="注册">
+</form>
+</body>
+</html>
